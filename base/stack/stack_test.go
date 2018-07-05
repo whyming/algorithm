@@ -1,4 +1,4 @@
-package Stack
+package stack
 
 import (
 	"reflect"
@@ -16,7 +16,7 @@ func TestAllStackInt(t *testing.T) {
 		t.Errorf("stacktint [1,2] peek is 2,get %d with err %v", d, err)
 	}
 
-	if err := sint.Pop(); err != nil {
+	if _, err := sint.Pop(); err != nil {
 		t.Errorf("stackitnt [1,2] pop result is error %v", err)
 	}
 
@@ -25,7 +25,7 @@ func TestAllStackInt(t *testing.T) {
 	}
 	sint.Pop()
 
-	if err := sint.Pop(); err == nil {
+	if _, err := sint.Pop(); err == nil {
 		t.Error("stackitnt [] pop result is not  error")
 	}
 
@@ -97,7 +97,7 @@ func TestStackInt_Pop(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := tt.s.Pop(); (err != nil) != tt.wantErr {
+			if _, err := tt.s.Pop(); (err != nil) != tt.wantErr {
 				t.Errorf("StackInt.Pop() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})

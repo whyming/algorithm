@@ -1,4 +1,4 @@
-package Stack
+package stack
 
 import "errors"
 
@@ -21,13 +21,13 @@ func (s *StackInt) Push(d int) {
 }
 
 // Pop an the peek data
-func (s *StackInt) Pop() error {
+func (s *StackInt) Pop() (result int, err error) {
 	if s.IsEmpty() {
-		return errors.New("Stack is empty")
+		return 0, errors.New("Stack is empty")
 	}
-
+	result = (*s)[len(*s)-1]
 	*s = (*s)[:len(*s)-1]
-	return nil
+	return
 }
 
 // Peek return the peek data
