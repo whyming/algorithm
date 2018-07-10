@@ -2,26 +2,26 @@ package stack
 
 import "errors"
 
-// StackInt is a stack of int
-type StackInt []int
+// Int is a stack of int
+type Int []int
 
 // NewStackInt return a StatckInt instance
-func NewStackInt() *StackInt {
-	return &StackInt{}
+func NewStackInt() *Int {
+	return &Int{}
 }
 
 // IsEmpty ...
-func (s StackInt) IsEmpty() bool {
+func (s Int) IsEmpty() bool {
 	return len(s) <= 0
 }
 
 // Push an item to stack
-func (s *StackInt) Push(d int) {
+func (s *Int) Push(d int) {
 	*s = append(*s, d)
 }
 
 // Pop an the peek data
-func (s *StackInt) Pop() (result int, err error) {
+func (s *Int) Pop() (result int, err error) {
 	if s.IsEmpty() {
 		return 0, errors.New("Stack is empty")
 	}
@@ -31,7 +31,7 @@ func (s *StackInt) Pop() (result int, err error) {
 }
 
 // Peek return the peek data
-func (s StackInt) Peek() (int, error) {
+func (s Int) Peek() (int, error) {
 	if s.IsEmpty() {
 		return 0, errors.New("Stack is empty")
 	}

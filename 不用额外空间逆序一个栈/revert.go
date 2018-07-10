@@ -5,7 +5,7 @@ import (
 )
 
 // Revert ...
-func Revert(s *stack.StackInt) *stack.StackInt {
+func Revert(s *stack.Int) *stack.Int {
 	if s.IsEmpty() {
 		return s
 	}
@@ -15,7 +15,7 @@ func Revert(s *stack.StackInt) *stack.StackInt {
 	return s
 }
 
-func getBottom(s *stack.StackInt) int {
+func getBottom(s *stack.Int) int {
 	peek, _ := s.Peek()
 	s.Pop()
 	if s.IsEmpty() {

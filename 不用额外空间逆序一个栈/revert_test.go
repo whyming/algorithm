@@ -9,7 +9,7 @@ import (
 
 func TestRevert(t *testing.T) {
 	type args struct {
-		s *stack.StackInt
+		s *stack.Int
 	}
 	originStack := stack.NewStackInt()
 	originStack.Push(1)
@@ -26,7 +26,7 @@ func TestRevert(t *testing.T) {
 	tests := []struct {
 		name string
 		args args
-		want *stack.StackInt
+		want *stack.Int
 	}{
 		{name: "onlyOne", args: args{s: originStack}, want: revertStack},
 	}
@@ -41,7 +41,7 @@ func TestRevert(t *testing.T) {
 
 func Test_getBottom(t *testing.T) {
 	type args struct {
-		s *stack.StackInt
+		s *stack.Int
 	}
 	s1 := stack.NewStackInt()
 	s1.Push(4)

@@ -36,7 +36,7 @@ func TestAllStackInt(t *testing.T) {
 func TestNewStackInt(t *testing.T) {
 	tests := []struct {
 		name string
-		want StackInt
+		want Int
 	}{
 		// TODO: Add test cases.
 	}
@@ -52,11 +52,11 @@ func TestNewStackInt(t *testing.T) {
 func TestStackInt_IsEmpty(t *testing.T) {
 	tests := []struct {
 		name string
-		s    StackInt
+		s    Int
 		want bool
 	}{
 		{name: "empty", s: []int{}, want: true},
-		{name: "noEmpty", s: StackInt{1, 2, 3}, want: false},
+		{name: "noEmpty", s: Int{1, 2, 3}, want: false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -73,7 +73,7 @@ func TestStackInt_Push(t *testing.T) {
 	}
 	tests := []struct {
 		name string
-		s    *StackInt
+		s    *Int
 		args args
 	}{
 		// TODO: Add test cases.
@@ -88,12 +88,12 @@ func TestStackInt_Push(t *testing.T) {
 func TestStackInt_Pop(t *testing.T) {
 	tests := []struct {
 		name    string
-		s       *StackInt
+		s       *Int
 		wantErr bool
 	}{
-		{name: "empty", s: &StackInt{}, wantErr: true},
-		{name: "onlyOne", s: &StackInt{2}, wantErr: false},
-		{name: "multi", s: &StackInt{2, 3, 4, 5}, wantErr: false},
+		{name: "empty", s: &Int{}, wantErr: true},
+		{name: "onlyOne", s: &Int{2}, wantErr: false},
+		{name: "multi", s: &Int{2, 3, 4, 5}, wantErr: false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -107,12 +107,12 @@ func TestStackInt_Pop(t *testing.T) {
 func TestStackInt_Peek(t *testing.T) {
 	tests := []struct {
 		name    string
-		s       StackInt
+		s       Int
 		want    int
 		wantErr bool
 	}{
-		{name: "empty", s: StackInt{1, 2, 3}, want: 3, wantErr: false},
-		{name: "onlyOne", s: StackInt{4}, want: 4, wantErr: false},
+		{name: "empty", s: Int{1, 2, 3}, want: 3, wantErr: false},
+		{name: "onlyOne", s: Int{4}, want: 4, wantErr: false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
