@@ -6,8 +6,8 @@ import "errors"
 type StackInt []int
 
 // NewStackInt return a StatckInt instance
-func NewStackInt() StackInt {
-	return StackInt{}
+func NewStackInt() *StackInt {
+	return &StackInt{}
 }
 
 // IsEmpty ...

@@ -6,8 +6,8 @@ import (
 
 // Queue ...
 type Queue struct {
-	PopStack  stack.StackInt
-	PushStack stack.StackInt
+	PopStack  *stack.StackInt
+	PushStack *stack.StackInt
 }
 
 // NewQueue ...

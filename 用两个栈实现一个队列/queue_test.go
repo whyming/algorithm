@@ -13,7 +13,7 @@ func TestQueue_Pop(t *testing.T) {
 		wantErr    bool
 	}{
 		{
-			name: "pushData", init: func(q *Queue) {
+			name: "nothing", init: func(q *Queue) {
 
 			}, wantResult: 0, wantErr: true,
 		}, {
